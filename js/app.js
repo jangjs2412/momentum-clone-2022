@@ -1,11 +1,9 @@
-const a=5, b=2;
-let myName="JJY";
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
 
-console.log(a+b);
-console.log(a*b);
-console.log(a/b);
-console.log("My name is " + myName);
+function loginButtonClick(){
+    console.log(loginInput.value)
+}
 
-myName="User";
-
-console.log("Your name is "+myName);
+loginButton.addEventListener("click", loginButtonClick);
