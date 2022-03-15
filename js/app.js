@@ -9,9 +9,9 @@ function loginSubmitEvent(event){
     loginForm.classList.add(HIDDEN_CLASSNAME);
     greeting.classList.remove(HIDDEN_CLASSNAME);
     console.log(userName);
+    localStorage.setItem("username", userName);
     //greeting.innerText="Hello! "+userName;
     greeting.innerText=`Hello! ${userName}`; //백틱(``)을 사용해서 표현가능
 }
 
-console.log("test");
 loginForm.addEventListener("submit", loginSubmitEvent);
