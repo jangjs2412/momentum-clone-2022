@@ -1,19 +1,17 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+const HIDDEN_CLASSNAME = "hidden";
 
 function loginSubmitEvent(event){
     event.preventDefault();
-    console.log(loginInput.value);
+    const userName = loginInput.value
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    console.log(userName);
+    //greeting.innerText="Hello! "+userName;
+    greeting.innerText=`Hello! ${userName}`; //백틱(``)을 사용해서 표현가능
 }
-
-function linkClick(event){
-    event.preventDefault();
-    console.log(event);
-}
-
-const link = document.querySelector("a");
-
 
 console.log("test");
 loginForm.addEventListener("submit", loginSubmitEvent);
-link.addEventListener("click",linkClick);
