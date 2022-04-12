@@ -1,8 +1,8 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
-const toDos = [];
 const TODOS_KEY = "todos";
+let toDos = [];
 
 function saveToDos(){
     //localStorage에 문자열형식으로 저장한다.
@@ -46,6 +46,9 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 console.log(savedToDos);
 if(savedToDos !== null){
     const parsedToDos = JSON.parse(savedToDos);
+    //새로고침을 했을 때, localstorage 외에 전부 초기화되는것을 막기위해 이 방식을 사용함.
+    toDos=parsedToDos;
+    parsedToDos.forEach(paintToDo);
     //화살표 함수
-    parsedToDos.forEach((item) => console.log("this is a ",item));
+    //parsedToDos.forEach((item) => console.log("this is a ",item));
 }
