@@ -13,13 +13,15 @@ function deleteToDo(event){
     const li = event.target.parentElement;
     //선택한 리스트를 삭제한다.
     li.remove();
+    console.log(li.id);
 }
 
 function paintToDo(newTodo){
     //li와 span생성
     const li = document.createElement("li");
+    li.id=newTodo.id;
     const span = document.createElement("span");
-    span.innerText=newTodo;
+    span.innerText=newTodo.text;
     const deleteButton = document.createElement("button");
     deleteButton.innerText="X";
     deleteButton.addEventListener("click", deleteToDo);
@@ -34,8 +36,12 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo=toDoInput.value;
     toDoInput.value="";
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    const newToDosObj = {
+        text:newTodo,
+        id:Date.now(),
+    };
+    toDos.push(newToDosObj);
+    paintToDo(newToDosObj);
     saveToDos();
 }
 
