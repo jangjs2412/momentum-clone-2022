@@ -51,7 +51,6 @@ toDoForm.addEventListener("submit",handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-console.log(savedToDos);
 if(savedToDos !== null){
     const parsedToDos = JSON.parse(savedToDos);
     //새로고침을 했을 때, localstorage 외에 전부 초기화되는것을 막기위해 이 방식을 사용함.
