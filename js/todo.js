@@ -13,7 +13,9 @@ function deleteToDo(event){
     const li = event.target.parentElement;
     //선택한 리스트를 삭제한다.
     li.remove();
-    console.log(li.id);
+    //li의 id는 문자열이기 때문에 toDo의 id인 정수형과 맞지않아서 정수형으로 형변환해준다.
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function paintToDo(newTodo){
