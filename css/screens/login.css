@@ -1,0 +1,42 @@
+.login-div {
+  text-align: center;
+}
+
+.nameQ_h2 {
+  font-size: 50px;
+  color: white;
+}
+
+.nameQ {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px white solid;
+  font-size: 45px;
+  text-align: center;
+  color: white;
+}
+
+.nameQ_btn {
+  display: none;
+}
+
+#weather {
+  color: white;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+}
+
+#clock {
+  color: white;
+  font-size: 64px;
+}
+
+#quote {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
