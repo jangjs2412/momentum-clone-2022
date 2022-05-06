@@ -7,11 +7,13 @@ function getClock(){
     //그 반대형은 padEnd():10
     const hours = String(date.getHours()).padStart(2,"0");
     const minutes = String(date.getMinutes()).padStart(2,"0");
-    const seconds = String(date.getSeconds()).padStart(2,"0");
-    clock.innerText=`${date.getFullYear()}년${date.getDay()}월${date.getDate()}일${hours}:${minutes}:${seconds}`;
+    //const seconds = String(date.getSeconds()).padStart(2,"0");
+    clock.innerText=`${hours}:${minutes}`;
+    //clock.innerText=`${date.getFullYear()}년${date.getDay()}월${date.getDate()}일${hours}:${minutes}:${seconds}`;
 }
 
-//setInterval(sayHello,5000); //setInterval(함수,ms밀리세컨드[5초인 경우 5000]):5초마다 함수 반복
+//setInterval(sayHello,5000); 
+//setInterval(함수,ms밀리세컨드[5초인 경우 5000]):5초마다 함수 반복
 getClock();
 setInterval(getClock,1000); //setTimeout(함수, ms):몇초 후에 함수 실행
 

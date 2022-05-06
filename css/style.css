@@ -7,10 +7,12 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 #wrap {
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,4 +30,20 @@ img {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+#todo-list {
+  margin-top: 20px;
+  color: white;
+}
+
+#todo-list > li {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#todo-list > li > span {
+  font-size: 50px;
 }
